@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login </title>
+    <link rel="stylesheet" href="/assets/cad.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/b2d95ced1d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <i class="fa-solid fa-moon"></i>
+    <div class="language"></div>
+    <div class="box-login bl">
+        <h2 class="box-t"> Olá, que bom te ver de volta. <span></span><br>Faça seu Login!</h2>
+        <form action="" method="get">
+            Email
+            <input type="email" placeholder="fulano@email.com"><br>
+            Senha
+            <input type="password" placeholder="Senha"><br>
+            <span id="sb"></span>
+            <button class="btn-submit"><i class="fa-solid fa-right-to-bracket"></i>Login</button>
+        </form>
+        <a href="/eng/index.html"><p class="box-t"> Já possui conta ? Faça seu login</p></a>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAnW4MzsdGhXJkmROl3u9539XaEuk8_sXU",
+        authDomain: "teste-b27b7.firebaseapp.com",
+        projectId: "teste-b27b7",
+        storageBucket: "teste-b27b7.appspot.com",
+        messagingSenderId: "533706669295",
+        appId: "1:533706669295:web:0e9ca39a0e7a1a08bb6f1a",
+        measurementId: "G-ENXQ8W1M56"
+    };
+    </script>
+    <script src="/js/verify.js"></script>
+</body>
+</html>
