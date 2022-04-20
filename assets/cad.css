@@ -6,6 +6,7 @@
 }
 body {
    background-image: url("https://wallpapercave.com/wp/wp3208018.jpg");
+    background-size: cover;
 }
 .box-login {
     position: relative;

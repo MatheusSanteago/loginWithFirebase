@@ -12,8 +12,7 @@ var icons = document.querySelectorAll("i");
 
 btnSubmit[0].addEventListener("click", getInputData);
 var errorSpan = document.getElementById("sb");
-var teste = document.getElementById("teste");
-//console.log(navigator.language);
+var display = document.getElementById("teste");
 
 function getInputData(evt) {
   email = inputData[0].value;
@@ -39,7 +38,9 @@ function login(email, password) {
         .then((user) => {
           text[0].innerHTML =
             "Parabéns seu login foi realizado! <span></span><br> Você será redirecionado para a página inicial";
-          console.log(user);
+          if(user){
+            window.location.assign("/ptbr/home.html");
+          }
           console.log(firebase.auth().currentUser);
         })
         .catch((err) => {
@@ -50,7 +51,13 @@ function login(email, password) {
       console.log(err);
     });
 }
-
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    //console.log(user.email);
+  } else {
+    //console.log("Usuário Deslogado!");
+  }
+});
 function logout() {
   firebase
     .auth()
@@ -58,7 +65,6 @@ function logout() {
     .then((obj) => console.log(obj))
     .catch((err) => console.log(err));
 }
-
 function errVerify(err) {
   switch (err.code) {
     case "auth/too-many-requests":
@@ -77,7 +83,6 @@ function errVerify(err) {
       break;
   }
 }
-
 function hideInput() {
   btnSubmit[0].style.display = "none";
   form.style.display = "none";
@@ -101,14 +106,27 @@ function animationLoading() {
     //window.location.assign("https://www.youtube.com/watch?v=VwDDL06g604&ab_channel=DjStarSunglasses");
   }, 2000);
 }
+function startDate() {
+  var today = new Date();
+  var mes = today.getMonth();
+  mes = putZero(mes);
+  var date = today.getDate() + "/" + mes + "/" + today.getFullYear();
+  return date;
+}
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = putZero(m);
+  s = putZero(s);
+  display.innerHTML = startDate() + " " + h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
 
-var today = new Date();
-var date =
-  today.getDate() + " - " + today.getMonth() + " - " + today.getFullYear();
-var todayDate = new Date();
-var time =
-  todayDate.getHours() +
-  ":" +
-  todayDate.getMinutes() +
-  ":" +
-  todayDate.getSeconds();
+function putZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}

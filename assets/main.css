@@ -6,10 +6,8 @@
 }
 body {
    background-image: url("https://wallpapercave.com/wp/wp3208018.jpg");
-   background-size:cover;      
+   background-size: cover;      
    background-repeat:no-repeat;
-   background-size: cover;
- 
 }
 .box-login {
     position: relative;
@@ -65,6 +63,11 @@ form > button {
     color: white;
     font-size: 1.7rem;
 }
+.fa-moon:hover{
+    transition: color 0.2s ease;
+    cursor: pointer;
+    color: rgb(102, 100, 100);
+}
 a {   
   color: #002c35;
   font-weight: bold;  
@@ -107,12 +110,19 @@ a {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    position: relative;
+    top: 60px;
     background-color:rgb(0, 0, 0);
     width: 200px;
     height: 60px;
     border-radius: 10px 0px 0px 10px; 
 }
 #teste{
+    position: relative;
+    font-weight: bold;
+    left: 190px;
+    top: 10px;
+    font-size: 30px;
+    float: right;
     color: white;
 }
