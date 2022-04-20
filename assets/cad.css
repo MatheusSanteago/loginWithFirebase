@@ -105,3 +105,25 @@ span {
     width: 300px;
     height: 50px;
 }
+@keyframes aflip {
+    to { top: 0px}
+    from { top: -100px}
+}
+.aflip {
+    position: relative;
+    animation: aflip 3s 1 ease;
+}
+@keyframes roll-spinner {
+    to {transform: rotate(0deg)}
+    from{transform: rotate(360deg)}
+}
+.fa-spinner {
+    visibility: hidden;
+    position: absolute;
+    top: 200px;
+    font-size: 2rem;
+    transition: animation 2s;
+}
+.faflip {
+    animation: roll-spinner 1s linear 5;
+}
