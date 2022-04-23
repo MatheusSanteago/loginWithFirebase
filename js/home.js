@@ -1,4 +1,3 @@
-
 firebase.initializeApp(firebaseConfig);
 var h1 = document.querySelector("h1");
 firebase.auth().onAuthStateChanged((user) => {
@@ -9,5 +8,4 @@ firebase.auth().onAuthStateChanged((user) => {
       console.log("Usuário Deslogado!");
     }
   });
-
 

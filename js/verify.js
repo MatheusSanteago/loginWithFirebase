@@ -12,7 +12,6 @@ var icons = document.querySelectorAll("i");
 
 btnSubmit[0].addEventListener("click", getInputData);
 var errorSpan = document.getElementById("sb");
-var display = document.getElementById("teste");
 
 function getInputData(evt) {
   email = inputData[0].value;
@@ -24,7 +23,6 @@ function getInputData(evt) {
     login(email, password);
   }
 }
-
 function login(email, password) {
   text[0].innerHTML = "Realizando Login";
   hideInput();
@@ -51,13 +49,6 @@ function login(email, password) {
       console.log(err);
     });
 }
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    //console.log(user.email);
-  } else {
-    //console.log("Usuário Deslogado!");
-  }
-});
 function logout() {
   firebase
     .auth()
@@ -106,27 +97,4 @@ function animationLoading() {
     //window.location.assign("https://www.youtube.com/watch?v=VwDDL06g604&ab_channel=DjStarSunglasses");
   }, 2000);
 }
-function startDate() {
-  var today = new Date();
-  var mes = today.getMonth();
-  mes = putZero(mes);
-  var date = today.getDate() + "/" + mes + "/" + today.getFullYear();
-  return date;
-}
-function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  m = putZero(m);
-  s = putZero(s);
-  display.innerHTML = startDate() + " " + h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);
-}
 
-function putZero(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
-}
