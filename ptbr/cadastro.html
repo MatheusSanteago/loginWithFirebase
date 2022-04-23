@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Cadastro </title>
-    <link rel="stylesheet" href="/assets/cad.css">
+    <link rel="stylesheet" href="/assets/main.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap');
     </style>
     <script src="https://kit.fontawesome.com/b2d95ced1d.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <i class="fa-solid fa-moon"></i>
-    <div class="language"></div>
+<body onload="startTime()">
+    <div class="main-header">
+        <i class="fa-solid fa-moon"></i>
+        <div class="language"></div>
+    </div>
+    <span id="clock"> 00/00/00 00:00:00</span>
     <div class="box-login bl">
         <h2 class="box-t "> Olá, faça seu cadastro!</h2><br>
         <i id="roll" class='fa-solid fa-spinner'></i>
@@ -24,7 +27,7 @@
             <input type="password" placeholder="Senha"><br>
             <span id="sb"></span>
             <button class="btn-submit"><i class="fa-solid fa-right-to-bracket"></i>Registrar-se</button>
-            <a href="/ptbr/index.html"><p class="box-t"> Já possui conta ? Faça seu login</p></a>
+            <a href="/ptbr/index.html"><p class="box-t tt"> Já possui conta ? Faça seu login</p></a>
         </form>
         
     </div>
@@ -43,5 +46,6 @@
     };
     </script>
     <script src="/js/cadastro.js"></script>
+    <script src="/js/clock.js"></script>
 </body>
 </html>
